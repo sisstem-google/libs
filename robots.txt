@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://luky-nesia.my.id/sitemap.xml
