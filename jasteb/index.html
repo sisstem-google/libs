@@ -1,0 +1,1452 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta name="Description" content="Penyedia Kebutuhan Hosting" />
+    <meta property="og:description" content="Penyedia Kebutuhan Web Hosting  !!" />
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="LUKY NESIA" />
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/Lukyhosting/testiluky@main/pp.png" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .head {
+            padding: 6px 0 6px 0;
+            text-align: center;
+            background-image: url('img/bg.jpeg');
+            background-color: #104;
+        }
+
+        .head .btn {
+            font-size: 15px;
+            padding: 2px 5px 2px 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .head .btn:focus {
+            box-shadow: none;
+        }
+
+        .navbar {
+            position: relative;
+            transition: top 0.3s;
+            background-color: rgb(16, 60, 94);
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .konten {
+            display: none;
+            padding-bottom: 50px;
+        }
+
+        .konten.active {
+            display: block;
+        }
+
+        .icon {
+            font-size: 13px;
+            display: inline-block;
+            transition: transform 0.10s ease;
+        }
+
+        .icon.up {
+            transform: rotate(-180deg);
+        }
+
+        .navbar .container {
+            max-width: 340px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            margin: 0 auto;
+        }
+
+        .navbar .container {
+            text-align: center;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .navbar .container .navbar-b {
+            background: none;
+            border: none;
+            padding: 4px 14px 4px 14px;
+            font: inherit;
+            cursor: pointer;
+            color: white;
+            border-radius: 4px;
+            margin: 2px;
+        }
+
+        .navbar .container .b1 { background-color: rgb(239, 179, 0); }
+        .navbar .container .b1:hover { background-color: rgb(254, 193, 9); }
+
+        .navbar .container .b2 { background-color: rgb(22, 160, 123); }
+        .navbar .container .b2:hover { background-color: rgb(11, 185, 139); }
+
+        .navbar .container .b3 { background-color: rgb(0, 117, 213); }
+        .navbar .container .b3:hover { background-color: rgb(0, 133, 242); }
+
+        .navbar .container .b4 { background-color: rgb(239, 179, 0); }
+        .navbar .container .b4:hover { background-color: rgb(254, 193, 9); }
+
+        .navbar .container .b5 { background-color: rgb(22, 160, 123); }
+        .navbar .container .b5:hover { background-color: rgb(11, 185, 139); }
+
+
+        /* ========= GLOBAL GRID STYLE (DIGUNAKAN OLEH KONTEN 1, 4, DAN 5) ======== */
+        .container .row {
+            padding-top: 13px;
+            padding-bottom: 10px;
+            border-radius: 3px;
+        }
+
+        .container .row .main {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px
+        }
+
+        @media(max-width: 768px) {
+            .container .row .main {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Styling Kartu Produk (Untuk List Jasteb, PT Jasteb, Kebutuhan Hosting) */
+        .container .row .main .content {
+            text-align: center;
+            background-color: rgb(19, 96, 156);
+            padding-bottom: 4px;
+            border-radius: 5px 5px 15px 15px;
+        }
+
+        .container .row .main .content:hover {
+            background-color: rgb(66, 125, 170);
+        }
+
+        .container .row .main .content .gam {
+            padding-top: 2px;
+            width: 98%;
+            margin: 0 auto;
+        }
+
+        .container .row .main .content .gam .img {
+            width: 100%;
+            height: auto;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .container .row .main .content .ord {
+            margin-top: 2px;
+            margin-bottom: -13px;
+            background-color: rgb(231, 243, 252);
+            border-radius: 0 0 12px 12px;
+        }
+
+        .container .row .main .content .ord .span1 {
+            padding-top: 2px;
+            margin-bottom: 1px;
+            line-height: 1.2;
+            font-size: 13px;
+            font-weight: bold;
+            color: rgb(16, 60, 94);
+            text-transform: uppercase;
+        }
+
+        .container .row .main .content .ord .span2 {
+            margin-top: -2px;
+            font-size: 12px;
+            font-weight: 550;
+            color: rgb(16, 60, 94);
+        }
+
+        .container .row .main .content .ord .span2 span {
+            color: rgb(14, 174, 54);
+        }
+
+        .container .row .main .content .ord .now {
+            margin-top: 5px;
+        }
+
+        .container .row .main .content .btn {
+            font-size: 13px;
+            margin-top: -4px;
+            padding: 0;
+            color: white;
+        }
+
+        .container .row .main .content .btn:focus {
+            box-shadow: none;
+        }
+
+        /* Styling Modal yang Konsisten */
+        .container .row .main .modal .modal-dialog .modal-content .modal-content {
+            padding: 3px;
+        }
+
+        .container .row .main .modal .modal-dialog .modal-content .modal-content .p {
+            padding: 5px;
+            margin: 0;
+        }
+
+        .container .row .main .modal .modal-dialog .modal-content .modal-content .p1 {
+            margin-bottom: -27px;
+            margin-top: -30px;
+            margin-left: -15px;
+            text-transform: uppercase;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .container .row .main .modal .modal-dialog .modal-content .modal-content .modal-header .p1-2 {
+            font-size: 10px;
+            margin-top: -15px;
+            margin-right: -15px;
+        }
+
+        .container .row .main .modal .modal-dialog .modal-content .modal-content .mb-1 .gam2 {
+            margin-top: 10px;
+            width: 100px;
+            float: left;
+            margin-right: 10px;
+        }
+
+        .container .row .main .modal .modal-dialog .modal-content .modal-content .mb-1 .gam2 img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            margin-left: 10px;
+        }
+
+        .container .row .main .modal .modal-dialog .modal-content .modal-content .mb-1 label {
+            font-size: 14px;
+            margin-bottom: -2px;
+            display: block;
+        }
+
+        .container .row .main .modal .modal-dialog .modal-content .modal-content .mb-1 input {
+            font-size: 14px;
+            margin-bottom: 15px;
+            width: 90%;
+        }
+
+        .container .row .main .modal .modal-dialog .modal-content .modal-content .mb-1 input:focus {
+            box-shadow: none;
+        }
+
+        .container .row .main .modal .modal-dialog .modal-content .modal-content .btn2 {
+            font-size: 15px;
+            width: 60%;
+            margin-bottom: 20px;
+            border-radius: 20px;
+            background-color: rgb(0, 213, 11);
+            border-color: rgb(68, 255, 77);
+        }
+        /* END GLOBAL GRID STYLE */
+
+        /* ======= konten2 (TESTIMONI) ======= */
+        .container .row2 {
+            padding-top: 13px;
+            padding-bottom: 10px;
+        }
+
+        .container .row2 .main2 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 7px
+        }
+
+        @media(max-width: 768px) {
+            .container .row2 .main2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .container .row2 .main2 .content {
+            width: 100%;
+            height: auto;
+            border: 2px solid rgb(44, 167, 113);
+            border-radius: 5px;
+            overflow: hidden;
+            background: white;
+        }
+
+        .container .row2 .main2 .content .gam {
+            width: 100%;
+        }
+
+        .container .row2 .main2 .content .gam .img {
+            width: 100%;
+        }
+
+        /* ======== konten3 (PAYMENT) ======== */
+        .container .row3 {
+            padding-top: 13px;
+            padding-bottom: 10px;
+            border-radius: 3px;
+            color: white;
+        }
+
+        .container .row3 .main3 {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        .container .row3 .main3 .content3 .head3 {
+            background-color: #22252e;
+            max-width: 550px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            padding-bottom: 2px;
+            padding-top: 7px;
+            border-radius: 10px;
+            color: white;
+            border: 2px solid transparent;
+            animation: borderAnimation 3s linear infinite;
+        }
+
+        @keyframes borderAnimation {
+            0% { border-color: rgb(255, 191, 0); }
+            33% { border-color: rgb(22, 160, 123); }
+            66% { border-color: rgb(0, 140, 255); }
+            100% { border-color: rgb(255, 191, 0); }
+        }
+
+        .container .row3 .main3 .content3 .qr1 {
+            background-color: #22252e;
+            padding-bottom: 20px;
+            padding-top: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            max-width: 550px;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .container .row3 .main3 .content3 .qr1 .p1 {
+            margin-bottom: 5px;
+            font-size: 16px;
+            font-weight: 550;
+            padding-bottom: 5px;
+            border-bottom: 1px solid white;
+            width: 100%;
+        }
+
+        .container .row3 .main3 .content3 .qr1 .p2 {
+            margin-bottom: 2px;
+            font-size: 13px;
+            min-height: 20px;
+        }
+
+        .container .row3 .main3 .content3 .qr1 .p3 {
+            font-size: 13px;
+            margin-top: 15px;
+            margin-bottom: 0;
+        }
+
+        .container .row3 .main3 .content3 .qr1 .gam3 {
+            width: 60%;
+            border: 1px solid rgb(238, 238, 238);
+            margin: 0 auto;
+        }
+
+        .container .row3 .main3 .content3 .qr1 .log {
+            background-color: rgb(46, 46, 46);
+            max-width: 300px;
+            padding: 10px 0 10px 0;
+            border-radius: 10px;
+            margin: 0 auto 10px auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .container .row3 .main3 .content3 .qr1 .log span {
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .container .row3 .main3 .content3 .qr1 .log .g0 {
+            width: 30px;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        .container .row3 .main3 .content3 .qr1 .log .g1 {
+            width: 30px;
+            height: auto;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .container .row3 .main3 .content3 .qr1 .gam3 .img3 {
+            width: 100%;
+            height: auto;
+        }
+
+        .container .row3 .main3 .modal .modal-dialog .modal-content .modal-content .gam4 {
+            padding: 5px;
+        }
+
+        .container .row3 .main3 .modal .modal-dialog .modal-content .modal-content .gam4 .img3 {
+            width: 100%;
+        }
+
+        .container .row3 .main3 .modal .modal-dialog .modal-content .modal-content .modal-header .p3 {
+            font-size: 13px;
+            font-weight: 550;
+            margin-bottom: -10px;
+            margin-top: -10px;
+            color: rgb(126, 126, 126);
+        }
+
+        .container .row3 .main3 .modal .modal-dialog .modal-content .modal-content .gam4 .btn-down {
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .container .row3 .main3 .content3 .qr1 .tf {
+            padding: 5px 15px 5px 15px;
+        }
+
+        .container .row3 .main3 .content3 .qr1 .tf .p5 {
+            font-size: 14px;
+            border-left: 1px solid white;
+            background-color: rgb(46, 46, 46);
+            padding: 7px;
+            border-radius: 0 5px 5px 0;
+            margin-bottom: 7px;
+        }
+
+        .container .row3 .main3 .content3 .qr1 .tf .p6 {
+            font-size: 14px;
+            border-left: 1px solid white;
+            background-color: rgb(46, 46, 46);
+            padding: 7px;
+            border-radius: 0 5px 5px 0;
+            margin-bottom: -10px;
+        }
+
+        /* ====================== */
+        footer {
+            background-color: rgb(16, 60, 94);
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: -10px;
+        }
+
+        footer .sos {
+            margin-bottom: 5px;
+            padding-top: 20px;
+        }
+
+        footer .pfoot {
+            color: white;
+            font-size: 12px;
+            padding-top: 10px;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+        }
+
+        .jud {
+            margin-top: 15px;
+            background-color: rgb(16, 60, 94);
+            padding: 10px 10px 5px 10px;
+            border-radius: 15px 0 15px 0;
+        }
+
+        .jud h1 {
+            color: white;
+            text-align: center;
+            font-size: 17px;
+            font-weight: 550;
+        }
+
+        footer .sos .i1 { margin-right: 15px; font-size: 26px; color: rgb(35, 137, 255); }
+        footer .sos .i2 { margin-right: 12px; font-size: 26px; color: rgb(20, 215, 20); }
+        footer .sos .i3 { color: rgb(201, 201, 0); font-size: 24px; }
+        footer .sos .i4 { margin-right: 12px; font-size: 26px; color: rgb(20, 215, 20); }
+        footer .sos .i5 { margin-right: 15px; font-size: 26px; color: rgb(35, 137, 255); }
+    </style>
+    <title>LUKY NESIA</title>
+</head>
+
+<body>
+    <div class="head">
+        <a href="index.html" class="btn " id="webname"></a>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
+        <div class="container">
+            <button class="navbar-b b1 active-btn" data-target="konten1" style="font-size: 14px;">JASTEB & PT JASTEB<span
+                    class="icon">&#x25BC;</span></button>
+            <button class="navbar-b b2 inactive-btn" data-target="konten2" style="font-size: 14px;">TESTIMONI <span
+                    class="icon">&#x25BC;</span></button>
+            <button class="navbar-b b3 inactive-btn" data-target="konten3" style="font-size: 14px;">Payment <span
+                    class="icon">&#x25BC;</span></button>
+            <button class="navbar-b b4 inactive-btn" data-target="konten4" style="font-size: 14px;">TEAM JASTEB & MARGA<span
+                    class="icon">&#x25BC;</span></button>                        
+        </div>
+    </nav>
+
+    <!-- KONTEN 1: LIST JASTEB -->
+    <div class="container konten konten1 active">
+        <div class="jud">
+            <h1>LIST HARGA JASTEB VIP & PT JASTEB</h1>
+        </div>
+        <div class="row">
+            <div class="main">
+                <!-- Item 1 -->
+                <div class="content">
+                    <center>
+                        <div class="gam" data-bs-toggle="modal" data-bs-target="#data31" data-bs-whatever="@fat">
+                            <img class="img" src="https://cdn.jsdelivr.net/gh/styleesheet/img@main/20251230_160908.jpg" alt="">
+                        </div>
+                    </center>
+                    <div class="ord">
+                        <p class=" span1">JASTEB MURNI</p>
+                        <p class="span2">Rp <span>5.000</span></p>
+                    </div>
+                    <div class="now" data-bs-toggle="modal" data-bs-target="#data31" data-bs-whatever="@fat">
+                        <button type="button" class="btn">Beli Sekarang</button>
+                    </div>
+                </div>
+                <!-- Modal 1 -->
+                <div class="modal fade" id="data31" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content dark-backdrop">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <p class="p p1">JASTEB MURNI GACOR</p>
+                                    <button type="button" class="btn-close p1-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form id="form1" onsubmit="event.preventDefault(); beliViaWhatsApp('6289509551861', document.getElementById('mess1').value);" method="post">
+                                    <div class="mb-1 modal1-body">
+                                        <div class="gam2">
+                                            <img src="https://cdn.jsdelivr.net/gh/styleesheet/img@main/20251230_160908.jpg" alt="">
+                                        </div>
+                                        <center>
+                                            <label for="mess1" class="col-form-label pesan-label" id="pesan1">Beri pesan kepenjual</label>
+                                            <input type="text" id="mess1" name="teks" class="form-control" value="Assalamu'alaikum Mau Beli Jasteb Murni 5k Min">
+                                        </center>
+                                    </div>
+                                    <center>
+                                        <button type="button" onclick="beliViaWhatsApp('6289509551861', document.getElementById('mess1').value)" id="beli1" name="beli" class="btn btn-success btn2">
+                                            <i style="font-size: 15px;" class="fab fa-whatsapp"></i> Beli Sekarang 
+                                        </button>
+                                    </center>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="content">
+                    <center>
+                        <div class="gam" data-bs-toggle="modal" data-bs-target="#data32" data-bs-whatever="@fat">
+                            <img class="img" src="https://cdn.jsdelivr.net/gh/styleesheet/img@main/20251230_160936.jpg" alt="">
+                        </div>
+                    </center>
+                    <div class="ord">
+                        <p class=" span1">JASTEB MURNI</p>
+                        <p class="span2">Rp <span>10.000</span></p>
+                    </div>
+                    <div class="now" data-bs-toggle="modal" data-bs-target="#data32" data-bs-whatever="@fat">
+                        <button type="button" class="btn">Beli Sekarang</button>
+                    </div>
+                </div>
+                <!-- Modal 2 -->
+                <div class="modal fade" id="data32" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content dark-backdrop">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <p class="p p1">JASTEB MURNI GACOR</p>
+                                    <button type="button" class="btn-close p1-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form id="form2" onsubmit="event.preventDefault(); beliViaWhatsApp('6289509551861', document.getElementById('mess2').value);" method="post">
+                                    <div class="mb-1 modal1-body">
+                                        <div class="gam2">
+                                            <img src="https://cdn.jsdelivr.net/gh/styleesheet/img@main/20251230_160936.jpg" alt="">
+                                        </div>
+                                        <center>
+                                            <label for="mess2" class="col-form-label pesan-label" id="pesan2">Beri pesan kepenjual</label>
+                                            <input type="text" id="mess2" name="teks" class="form-control" value="Assalamu'alaikum Mau Beli Jasteb 10k Min">
+                                        </center>
+                                    </div>
+                                    <center>
+                                        <button type="button" onclick="beliViaWhatsApp('6289509551861', document.getElementById('mess2').value)" id="beli2" name="beli" class="btn btn-success btn2">
+                                            <i style="font-size: 15px;" class="fab fa-whatsapp"></i> Beli Sekarang 
+                                        </button>
+                                    </center>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="content">
+                    <center>
+                        <div class="gam" data-bs-toggle="modal" data-bs-target="#data33" data-bs-whatever="@fat">
+                            <img class="img" src="https://cdn.jsdelivr.net/gh/styleesheet/img@main/20251230_151758.jpg" alt="">
+                        </div>
+                    </center>
+                    <div class="ord">
+                        <p class=" span1">JASTEB MURNI</p>
+                        <p class="span2">Rp <span>15.000</span></p>
+                    </div>
+                    <div class="now" data-bs-toggle="modal" data-bs-target="#data33" data-bs-whatever="@fat">
+                        <button type="button" class="btn">Beli Sekarang</button>
+                    </div>
+                </div>
+                <!-- Modal 3 -->
+                <div class="modal fade" id="data33" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content dark-backdrop">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <p class="p p1">JASTEB MURNI VVIP</p>
+                                    <button type="button" class="btn-close p1-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form id="form3" onsubmit="event.preventDefault(); beliViaWhatsApp('6289509551861', document.getElementById('mess3').value);" method="post">
+                                    <div class="mb-1 modal1-body">
+                                        <div class="gam2">
+                                            <img src="https://cdn.jsdelivr.net/gh/styleesheet/img@main/20251230_151758.jpg" alt="">
+                                        </div>
+                                        <center>
+                                            <label for="mess3" class="col-form-label pesan-label" id="pesan3">Beri pesan kepenjual</label>
+                                            <input type="text" id="mess3" name="teks" class="form-control" value="Assalamu'alaikum Mau Beli Jasteb 15K Min">
+                                        </center>
+                                    </div>
+                                    <center>
+                                        <button type="button" onclick="beliViaWhatsApp('6289509551861', document.getElementById('mess3').value)" id="beli3" name="beli" class="btn btn-success btn2">
+                                            <i style="font-size: 15px;" class="fab fa-whatsapp"></i> Beli Sekarang 
+                                        </button>
+                                    </center>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="content">
+                    <center>
+                        <div class="gam" data-bs-toggle="modal" data-bs-target="#data34" data-bs-whatever="@fat">
+                            <img class="img" src="https://cdn.jsdelivr.net/gh/styleesheet/img@main/20251230_161155.jpg" alt="">
+                        </div>
+                    </center>
+                    <div class="ord">
+                        <p class=" span1">JASTEB MURNI</p>
+                        <p class="span2">Rp <span>20.000</span></p>
+                    </div>
+                    <div class="now" data-bs-toggle="modal" data-bs-target="#data34" data-bs-whatever="@fat">
+                        <button type="button" class="btn">Beli Sekarang</button>
+                    </div>
+                </div>
+                <!-- Modal 4 -->
+                <div class="modal fade" id="data34" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content dark-backdrop">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <p class="p p1">JASTEB MURNI VVIP</p>
+                                    <button type="button" class="btn-close p1-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form id="form4" onsubmit="event.preventDefault(); beliViaWhatsApp('6289509551861', document.getElementById('mess4').value);" method="post">
+                                    <div class="mb-1 modal1-body">
+                                        <div class="gam2">
+                                            <img src="https://cdn.jsdelivr.net/gh/styleesheet/img@main/20251230_161155.jpg" alt="">
+                                        </div>
+                                        <center>
+                                            <label for="mess4" class="col-form-label pesan-label" id="pesan4">Beri pesan kepenjual</label>
+                                            <input type="text" id="mess4" name="teks" class="form-control" value="Assalamu'alaikum Mau Beli Jasteb 20K Min">
+                                        </center>
+                                    </div>
+                                    <center>
+                                        <button type="button" onclick="beliViaWhatsApp('6289509551861', document.getElementById('mess4').value)" id="beli4" name="beli" class="btn btn-success btn2">
+                                            <i style="font-size: 15px;" class="fab fa-whatsapp"></i> Beli Sekarang 
+                                        </button>
+                                    </center>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="content">
+                    <center>
+                        <div class="gam" data-bs-toggle="modal" data-bs-target="#data35" data-bs-whatever="@fat">
+                            <img class="img" src="https://cdn.jsdelivr.net/gh/styleesheet/img@main/20251230_161250.jpg" alt="">
+                        </div>
+                    </center>
+                    <div class="ord">
+                        <p class=" span1">JASTEB MURNI </p>
+                        <p class="span2">Rp <span>25.000</span></p>
+                    </div>
+                    <div class="now" data-bs-toggle="modal" data-bs-target="#data35" data-bs-whatever="@fat">
+                        <button type="button" class="btn">Beli Sekarang</button>
+                    </div>
+                </div>
+                <!-- Modal 5 -->
+                <div class="modal fade" id="data35" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content dark-backdrop">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <p class="p p1">JASTEB MURNI VVIP</p>
+                                    <button type="button" class="btn-close p1-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form id="form5" onsubmit="event.preventDefault(); beliViaWhatsApp('6289509551861', document.getElementById('mess5').value);" method="post">
+                                    <div class="mb-1 modal1-body">
+                                        <div class="gam2">
+                                            <img src="https://cdn.jsdelivr.net/gh/styleesheet/img@main/20251230_161250.jpg" alt="">
+                                        </div>
+                                        <center>
+                                            <label for="mess5" class="col-form-label pesan-label" id="pesan5">Beri pesan kepenjual</label>
+                                            <input type="text" id="mess5" name="teks" class="form-control" value="Assalamu'alaikum Mau Beli Jasteb 25K Min">
+                                        </center>
+                                    </div>
+                                    <center>
+                                        <button type="button" onclick="beliViaWhatsApp('6289509551861',document.getElementById('mess5').value)" id="beli5" name="beli" class="btn btn-success btn2">
+                                            <i style="font-size: 15px;" class="fab fa-whatsapp"></i> Beli Sekarang 
+                                        </button>
+                                    </center>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                    <!-- Item 1 -->
+                <div class="content">
+                    <center>
+                        <div class="gam" data-bs-toggle="modal" data-bs-target="#data1" data-bs-whatever="@fat">
+                            <img class="img" src="https://cdn.jsdelivr.net/gh/styleesheet/img@main/20260116_000212.jpg" alt="">
+                        </div>
+                    </center>
+                    <div class="ord">
+                        <p class=" span1">PT JASTEB</p>
+                        <p class="span2">Rp <span>15.000</span></p>
+                    </div>
+                    <div class="now" data-bs-toggle="modal" data-bs-target="#data1" data-bs-whatever="@fat">
+                        <button type="button" class="btn">Beli Sekarang</button>
+                    </div>
+                </div>
+                <!-- Modal 1 -->
+                <div class="modal fade" id="data1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content dark-backdrop">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <p class="p p1">PT JASTEB</p>
+                                    <button type="button" class="btn-close p1-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form id="form1" onsubmit="event.preventDefault(); beliViaWhatsApp('6289509551861', document.getElementById('mess1').value);" method="post">
+                                    <div class="mb-1 modal1-body">
+                                        <div class="gam2">
+                                            <img src="https://cdn.jsdelivr.net/gh/styleesheet/img@main/20260116_000212.jpg" alt="">
+                                        </div>
+                                        <center>
+                                            <label for="mess1" class="col-form-label pesan-label" id="pesan1">Beri pesan kepenjual</label>
+                                            <input type="text" id="mess1" name="teks" class="form-control" value="Assalamu'alaikum Mau Join Pt Jastebax 3 Gmail Min">
+                                        </center>
+                                    </div>
+                                    <center>
+                                        <button type="button" onclick="beliViaWhatsApp('6289509551861', document.getElementById('mess1').value)" id="beli1" name="beli" class="btn btn-success btn2">
+                                            <i style="font-size: 15px;" class="fab fa-whatsapp"></i> Beli Sekarang 
+                                        </button>
+                                    </center>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="content">
+                    <center>
+                        <div class="gam" data-bs-toggle="modal" data-bs-target="#data2" data-bs-whatever="@fat">
+                            <img class="img" src="https://cdn.jsdelivr.net/gh/styleesheet/img@main/20260116_000524.jpg" alt="">
+                        </div>
+                    </center>
+                    <div class="ord">
+                        <p class=" span1">PT JASTEB</p>
+                        <p class="span2">Rp <span>25.000</span></p>
+                    </div>
+                    <div class="now" data-bs-toggle="modal" data-bs-target="#data2" data-bs-whatever="@fat">
+                        <button type="button" class="btn">Beli Sekarang</button>
+                    </div>
+                </div>
+                <!-- Modal 2 -->
+                <div class="modal fade" id="data2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content dark-backdrop">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <p class="p p1">PT JASTEB</p>
+                                    <button type="button" class="btn-close p1-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form id="form2" onsubmit="event.preventDefault(); beliViaWhatsApp('6289509551861', document.getElementById('mess2').value);" method="post">
+                                    <div class="mb-1 modal1-body">
+                                        <div class="gam2">
+                                            <img src="https://cdn.jsdelivr.net/gh/styleesheet/img@main/20260116_000524.jpg" alt="">
+                                        </div>
+                                        <center>
+                                            <label for="mess2" class="col-form-label pesan-label" id="pesan2">Beri pesan kepenjual</label>
+                                            <input type="text" id="mess2" name="teks" class="form-control" value="Assalamu'alaikum Mau Join Pt Jasteb Max 5 Gmail Min">
+                                        </center>
+                                    </div>
+                                    <center>
+                                        <button type="button" onclick="beliViaWhatsApp('6289509551861', document.getElementById('mess2').value)" id="beli2" name="beli" class="btn btn-success btn2">
+                                            <i style="font-size: 15px;" class="fab fa-whatsapp"></i> Beli Sekarang 
+                                        </button>
+                                    </center>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="content">
+                    <center>
+                        <div class="gam" data-bs-toggle="modal" data-bs-target="#data3" data-bs-whatever="@fat">
+                            <img class="img" src="https://cdn.jsdelivr.net/gh/styleesheet/img@main/20260116_000728.jpg" alt="">
+                        </div>
+                    </center>
+                    <div class="ord">
+                        <p class=" span1">PT JASTEB VIP</p>
+                        <p class="span2">Rp <span>35.000</span></p>
+                    </div>
+                    <div class="now" data-bs-toggle="modal" data-bs-target="#data3" data-bs-whatever="@fat">
+                        <button type="button" class="btn">Beli Sekarang</button>
+                    </div>
+                </div>
+                <!-- Modal 3 -->
+                <div class="modal fade" id="data3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content dark-backdrop">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <p class="p p1">PT JASTEB VIP</p>
+                                    <button type="button" class="btn-close p1-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form id="form3" onsubmit="event.preventDefault(); beliViaWhatsApp('6289509551861', document.getElementById('mess3').value);" method="post">
+                                    <div class="mb-1 modal1-body">
+                                        <div class="gam2">
+                                            <img src="https://cdn.jsdelivr.net/gh/styleesheet/img@main/20260116_000728.jpg" alt="">
+                                        </div>
+                                        <center>
+                                            <label for="mess3" class="col-form-label pesan-label" id="pesan3">Beri pesan kepenjual</label>
+                                            <input type="text" id="mess3" name="teks" class="form-control" value="Assalamu'alaikum Mau Join Pt Jasteb Vvip Unlimited Gmail Min">
+                                        </center>
+                                    </div>
+                                    <center>
+                                        <button type="button" onclick="beliViaWhatsApp('6289509551861', document.getElementById('mess3').value)" id="beli3" name="beli" class="btn btn-success btn2">
+                                            <i style="font-size: 15px;" class="fab fa-whatsapp"></i> Beli Sekarang 
+                                        </button>
+                                    </center>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="content">
+                    <center>
+                        <div class="gam" data-bs-toggle="modal" data-bs-target="#data4" data-bs-whatever="@fat">
+                            <img class="img" src="https://cdn.jsdelivr.net/gh/styleesheet/img@main/20260116_000943.jpg" alt="">
+                        </div>
+                    </center>
+                    <div class="ord">
+                        <p class=" span1">PT JASTEB VIP</p>
+                        <p class="span2">Rp <span>40.000</span></p>
+                    </div>
+                    <div class="now" data-bs-toggle="modal" data-bs-target="#data4" data-bs-whatever="@fat">
+                        <button type="button" class="btn">Beli Sekarang</button>
+                    </div>
+                </div>
+                <!-- Modal 4 -->
+                <div class="modal fade" id="data4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content dark-backdrop">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <p class="p p1">PT JASTEB VIP</p>
+                                    <button type="button" class="btn-close p1-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form id="form4" onsubmit="event.preventDefault(); beliViaWhatsApp('6289509551861', document.getElementById('mess4').value);" method="post">
+                                    <div class="mb-1 modal1-body">
+                                        <div class="gam2">
+                                            <img src="https://cdn.jsdelivr.net/gh/styleesheet/img@main/20260116_000943.jpg" alt="">
+                                        </div>
+                                        <center>
+                                            <label for="mess4" class="col-form-label pesan-label" id="pesan4">Beri pesan kepenjual</label>
+                                            <input type="text" id="mess4" name="teks" class="form-control" value="Assalamu'alaikum Mau Join Pt Jasteb Yang Bisa Buat Web Jasteb Sendiri Min">
+                                        </center>
+                                    </div>
+                                    <center>
+                                        <button type="button" onclick="beliViaWhatsApp('6289509551861', document.getElementById('mess4').value)" id="beli4" name="beli" class="btn btn-success btn2">
+                                            <i style="font-size: 15px;" class="fab fa-whatsapp"></i> Beli Sekarang 
+                                        </button>
+                                    </center>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="content">
+                    <center>
+                        <div class="gam" data-bs-toggle="modal" data-bs-target="#data5" data-bs-whatever="@fat">
+                            <img class="img" src="https://cdn.jsdelivr.net/gh/styleesheet/img@main/20260116_001207.jpg" alt="">
+                        </div>
+                    </center>
+                    <div class="ord">
+                        <p class=" span1">PT JASTEB VIP </p>
+                        <p class="span2">Rp <span>45.000</span></p>
+                    </div>
+                    <div class="now" data-bs-toggle="modal" data-bs-target="#data5" data-bs-whatever="@fat">
+                        <button type="button" class="btn">Beli Sekarang</button>
+                    </div>
+                </div>
+                <!-- Modal 5 -->
+                <div class="modal fade" id="data5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content dark-backdrop">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <p class="p p1">PT JASTEB VIP</p>
+                                    <button type="button" class="btn-close p1-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form id="form5" onsubmit="event.preventDefault(); beliViaWhatsApp('6289509551861', document.getElementById('mess5').value);" method="post">
+                                    <div class="mb-1 modal1-body">
+                                        <div class="gam2">
+                                            <img src="https://cdn.jsdelivr.net/gh/styleesheet/img@main/20260116_001207.jpg" alt="">
+                                        </div>
+                                        <center>
+                                            <label for="mess5" class="col-form-label pesan-label" id="pesan5">Beri pesan kepenjual</label>
+                                            <input type="text" id="mess5" name="teks" class="form-control" value="Assalamu'alaikum Mau Join Pt Jasteb Free Admin Saluran Min">
+                                        </center>
+                                    </div>
+                                    <center>
+                                        <button type="button" onclick="beliViaWhatsApp('6289509551861',document.getElementById('mess5').value)" id="beli5" name="beli" class="btn btn-success btn2">
+                                            <i style="font-size: 15px;" class="fab fa-whatsapp"></i> Beli Sekarang 
+                                        </button>
+                                    </center>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- KONTEN 4: LIST PT JASTEB (FORMAT SAMA DENGAN KONTEN 1) -->
+    <div class="container konten konten4">
+        <div class="jud">
+            <h1>LIST HARGA TEAM JASTEB & MARGA</h1>
+        </div>
+        <div class="row">
+            <div class="main">
+                <!-- PT Item 1 (ID changed to data40) -->
+                <div class="content">
+                    <center>
+                        <div class="gam" data-bs-toggle="modal" data-bs-target="#data40" data-bs-whatever="@fat">
+                            <img class="img" src="https://cdn.jsdelivr.net/gh/styleesheet/img@main/20260117_012940.jpg" alt="">
+                        </div>
+                    </center>
+                    <div class="ord">
+                        <p class=" span1">MARGA JASTEB</p>
+                        <p class="span2">Rp <span>50.000 ( BISA DP )</span></p>
+                    </div>
+                    <div class="now" data-bs-toggle="modal" data-bs-target="#data40" data-bs-whatever="@fat">
+                        <button type="button" class="btn">Beli Sekarang</button>
+                    </div>
+                </div>
+                <div class="modal fade" id="data40" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content dark-backdrop">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <p class="p p1">Marga Jasteb</p>
+                                    <button type="button" class="btn-close p1-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form id="form40" onsubmit="event.preventDefault(); beliViaWhatsApp('6289509551861', document.getElementById('mess40').value);" method="post">
+                                    <div class="mb-1 modal1-body">
+                                        <div class="gam2">
+                                            <img src="https://cdn.jsdelivr.net/gh/styleesheet/img@main/20260117_012940.jpg" alt="">
+                                        </div>
+                                        <center>
+                                            <label for="mess40" class="col-form-label pesan-label" id="pesan40">Beri pesan kepenjual</label>
+                                            <input type="text" id="mess40" name="teks" class="form-control" value="Assalamu'alaikum Mau Join Marga Jasteb Min">
+                                        </center>
+                                    </div>
+                                    <center>
+                                        <button type="button" onclick="beliViaWhatsApp('6289509551861', document.getElementById('mess40').value)" id="beli40" name="beli" class="btn btn-success btn2">
+                                            <i style="font-size: 15px;" class="fab fa-whatsapp"></i> Beli via WhatsApp
+                                        </button>
+                                    </center>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PT Item 2 (ID changed to data41) -->
+                <div class="content">
+                    <center>
+                        <div class="gam" data-bs-toggle="modal" data-bs-target="#data41" data-bs-whatever="@fat">
+                            <img class="img" src="https://cdn.jsdelivr.net/gh/styleesheet/img@main/20260117_013015.jpg" alt="">
+                        </div>
+                    </center>
+                    <div class="ord">
+                        <p class=" span1">ADMIN MARGA</p>
+                        <p class="span2">Rp <span>100.000 ( BISA DP )</span></p>
+                    </div>
+                    <div class="now" data-bs-toggle="modal" data-bs-target="#data41" data-bs-whatever="@fat">
+                        <button type="button" class="btn">Beli Sekarang</button>
+                    </div>
+                </div>
+                <div class="modal fade" id="data41" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content dark-backdrop">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <p class="p p1">ADMIN MARGA JASTEB</p>
+                                    <button type="button" class="btn-close p1-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form id="form41" onsubmit="event.preventDefault(); beliViaWhatsApp('6289509551861', document.getElementById('mess41').value);" method="post">
+                                    <div class="mb-1 modal1-body">
+                                        <div class="gam2">
+                                            <img src="https://cdn.jsdelivr.net/gh/styleesheet/img@main/20260117_013015.jpg" alt="">
+                                        </div>
+                                        <center>
+                                            <label for="mess41" class="col-form-label pesan-label" id="pesan41">Beri pesan kepenjual</label>
+                                            <input type="text" id="mess41" name="teks" class="form-control" value="Assalamu'alaikum Mau Join Admin Marga Jasteb Min">
+                                        </center>
+                                    </div>
+                                    <center>
+                                        <button type="button" onclick="beliViaWhatsApp('6289509551861', document.getElementById('mess41').value)" id="beli41" name="beli" class="btn btn-success btn2">
+                                            <i style="font-size: 15px;" class="fab fa-whatsapp"></i> Beli via WhatsApp
+                                        </button>
+                                    </center>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PT Item 3 (ID changed to data42) -->
+                <div class="content">
+                    <center>
+                        <div class="gam" data-bs-toggle="modal" data-bs-target="#data42" data-bs-whatever="@fat">
+                            <img class="img" src="https://cdn.jsdelivr.net/gh/styleesheet/img@main/20260117_011738.jpg" alt="">
+                        </div>
+                    </center>
+                    <div class="ord">
+                        <p class=" span1">TEAM JASTEB</p>
+                        <p class="span2">Rp <span>25.000 ( BISA DP )</span></p>
+                    </div>
+                    <div class="now" data-bs-toggle="modal" data-bs-target="#data42" data-bs-whatever="@fat">
+                        <button type="button" class="btn">Beli Sekarang</button>
+                    </div>
+                </div>
+                <div class="modal fade" id="data42" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content dark-backdrop">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <p class="p p1">TEAM JASTEB</p>
+                                    <button type="button" class="btn-close p1-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form id="form42" onsubmit="event.preventDefault(); beliViaWhatsApp('6289509551861', document.getElementById('mess42').value);" method="post">
+                                    <div class="mb-1 modal1-body">
+                                        <div class="gam2">
+                                            <img src="https://cdn.jsdelivr.net/gh/styleesheet/img@main/20260117_011738.jpg" alt="">
+                                        </div>
+                                        <center>
+                                            <label for="mess42" class="col-form-label pesan-label" id="pesan42">Beri pesan kepenjual</label>
+                                            <input type="text" id="mess42" name="teks" class="form-control" value="Assalamu'alaikum Mau Join Team Jasteb Min">
+                                        </center>
+                                    </div>
+                                    <center>
+                                        <button type="button" onclick="beliViaWhatsApp('6289509551861', document.getElementById('mess42').value)" id="beli42" name="beli" class="btn btn-success btn2">
+                                            <i style="font-size: 15px;" class="fab fa-whatsapp"></i> Beli via WhatsApp
+                                        </button>
+                                    </center>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PT Item 4 (ID changed to data43) -->
+                <div class="content">
+                    <center>
+                        <div class="gam" data-bs-toggle="modal" data-bs-target="#data43" data-bs-whatever="@fat">
+                            <img class="img" src="https://cdn.jsdelivr.net/gh/styleesheet/img@main/20260117_012043.jpg" alt="">
+                        </div>
+                    </center>
+                    <div class="ord">
+                        <p class=" span1">ADMIN TEAM JASTEB</p>
+                        <p class="span2">Rp <span>35.000 ( BISA DP )</span></p>
+                    </div>
+                    <div class="now" data-bs-toggle="modal" data-bs-target="#data43" data-bs-whatever="@fat">
+                        <button type="button" class="btn">Beli Sekarang</button>
+                    </div>
+                </div>
+                <div class="modal fade" id="data43" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content dark-backdrop">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <p class="p p1">ADMIN TEAM JASTEB</p>
+                                    <button type="button" class="btn-close p1-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form id="form43" onsubmit="event.preventDefault(); beliViaWhatsApp('6289509551861', document.getElementById('mess43').value);" method="post">
+                                    <div class="mb-1 modal1-body">
+                                        <div class="gam2">
+                                            <img src="https://cdn.jsdelivr.net/gh/styleesheet/img@main/20260117_012043.jpg" alt="">
+                                        </div>
+                                        <center>
+                                            <label for="mess43" class="col-form-label pesan-label" id="pesan43">Beri pesan kepenjual</label>
+                                            <input type="text" id="mess43" name="teks" class="form-control" value="Assalamu'alaikum Mau Join Admin Team Jasteb Min">
+                                        </center>
+                                    </div>
+                                    <center>
+                                        <button type="button" onclick="beliViaWhatsApp('6289509551861', document.getElementById('mess43').value)" id="beli43" name="beli" class="btn btn-success btn2">
+                                            <i style="font-size: 15px;" class="fab fa-whatsapp"></i> Beli via WhatsApp
+                                        </button>
+                                    </center>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- KONTEN 2: TESTIMONI -->
+    <div class="container konten konten2">
+        <div class="row2">
+            <div class="main2">
+                <!-- Gallery Images -->
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_004306.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_004344.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_004407.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_004548.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_004608.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_004644.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_004658.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_004710.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_004722.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_004734.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_004748.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_004801.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_005156.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_005207.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_005220.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_005233.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_005247.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_005258.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_005310.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_005322.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_005340.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_005350.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_005403.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_005415.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_005429.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_005444.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_005458.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_005515.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_005529.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_005540.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_005605.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_005551.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_005619.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_005628.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_005637.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_005648.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_005657.jpg" alt=""></div></center></div>
+                <div class="content"><center><div class="gam"><img class="img" src="https://cdn.jsdelivr.net/gh/sisstem-google/javavip@main/img/IMG_20260114_005707.jpg" alt=""></div></center></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- KONTEN 3: PAYMENT -->
+    <div class="container konten konten3">
+        <div class="row3">
+            <div class="main3">
+                <div class="content3">
+                    <center>
+                        <div class="head2">
+                            <div class="head3">
+                                <h6>List Pembayaran LUKY NESIA</h6>
+                            </div>
+                        </div>
+                        <div class="qr1">
+                            <p class="p1">Scan qris allpay</p>
+                            <p class="p2" id="zoom"></p>
+                            <div class="gam3">
+                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#qris" data-bs-whatever="@fat" data-lightbox="image">
+                                    <img class="img3" src="https://cdn.jsdelivr.net/gh/styleesheet/img@main/qr_ID1026473573586_23.01.26_176914446_1769144469395.jpeg" alt="">
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="qr1">
+                            <p class="p1">Transfer ke E-wallet</p>
+                            <div class="log log1">
+                                <img src="https://cdn.jsdelivr.net/gh/Lukyhosting/testiluky@main/dana.png" alt="" class="g0">
+                                <span id="wallet" onclick="copyWallet()">belum tersedia</span>
+                            </div>
+                            <div class="log log2">
+                                <img src="https://cdn.jsdelivr.net/gh/Lukyhosting/testiluky@main/seabank.png" alt="" class="g1">
+                                <span id="sea" onclick="copySea()">belum tersedia</span>
+                                <p class="p3" id="zoom2"></p>
+                            </div>
+                    </center>
+                    
+                    <div class="qr1">
+                        <div class="tf">
+                            <p class="p5">Setelah melakukan pembayaran mohon untuk mengirim bukti transfer berupa screenshot ke nomor whatsapp penjual</p>
+                            <p class="p6">Jika sudah tunggu 5-10 mnt untuk penjual memproses pesananmu dan jangan spam agar pesanan cepat diproses!</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal QRIS -->
+                <div class="modal fade" id="qris" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content dark-backdrop">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <p class="p3"><span style="color: #349be5;">DANA</span> / <span style="color: #523a97;">OVO</span> / <span style="color: #00afd4;">GOPAY</span> / <span style="color: #fc0808;">LinkAja</span> / <span style="color: #ef5334;">ShopeePay</span></p>
+                                    <button type="button" class="btn-close p1-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="gam4">
+                                    <img class="img3" src="https://cdn.jsdelivr.net/gh/styleesheet/img@main/qr_ID1026473573586_23.01.26_176914446_1769144469395.jpeg" alt="">
+                                    <center><a href="https://cdn.jsdelivr.net/gh/styleesheet/img@main/qr_ID1026473573586_23.01.26_176914446_1769144469395.jpeg" download class="btn btn-primary btn-sm btn-down"><i class="fa-solid fa-download" style="margin-right: 3px;"></i> Unduh Gambar</a></center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="sos">
+            <a href="https://wa.me/6289509551861" class="i i2"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://wa.me/6289509551861" class="i i2"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://shrturl.my.id/" class="i i3"><i class="fa-solid fa-link"></i></a>
+        </div>
+        <p class="pfoot">&copy; LUKY NESIA</p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        function beliViaWhatsApp(nomor, pesan) {
+            var url = 'https://wa.me/' + nomor + '?text=' + encodeURIComponent(pesan);
+            window.open(url, '_blank');
+        }
+
+        function copyWallet() {
+            var text = document.getElementById("wallet");
+            var range = document.createRange();
+            range.selectNode(text);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges();
+            
+            var originalColor = text.style.color;
+            text.style.color = "green";
+
+            setTimeout(function () {
+                text.style.color = originalColor;
+            }, 120);
+        }
+
+        function copySea() {
+            var text = document.getElementById("sea");
+            var range = document.createRange();
+            range.selectNode(text);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges();
+            
+            var originalColor = text.style.color;
+            text.style.color = "orange";
+
+            setTimeout(function () {
+                text.style.color = originalColor;
+            }, 120);
+        }
+
+        // Animasi Teks Zoom2
+        const textElement3 = document.getElementById('zoom2');
+        const text3 = "klik nomor untuk menyalin";
+        const colors3 = ["white"];
+        let index3 = 0;
+
+        function getRandomColor(arr) {
+            return arr[Math.floor(Math.random() * arr.length)];
+        }
+
+        function displayText3() {
+            if (index3 < text3.length) {
+                const currentColor = getRandomColor(colors3);
+                const span = document.createElement('span');
+                span.textContent = text3[index3];
+                span.style.color = currentColor;
+                textElement3.appendChild(span);
+                index3++;
+                setTimeout(displayText3, 65);
+            } else {
+                setTimeout(resetText3, 1550);
+            }
+        }
+
+        function resetText3() {
+            textElement3.textContent = "";
+            index3 = 0;
+            displayText3();
+        }
+        displayText3();
+
+        // Animasi Teks Zoom
+        const textElement2 = document.getElementById('zoom');
+        const text2 = "klik untuk memperbesar";
+        const colors2 = ["white"];
+        let index2 = 0;
+
+        function displayText2() {
+            if (index2 < text2.length) {
+                const currentColor = getRandomColor(colors2);
+                const span = document.createElement('span');
+                span.textContent = text2[index2];
+                span.style.color = currentColor;
+                textElement2.appendChild(span);
+                index2++;
+                setTimeout(displayText2, 75);
+            } else {
+                setTimeout(resetText2, 1550);
+            }
+        }
+
+        function resetText2() {
+            textElement2.textContent = "";
+            index2 = 0;
+            displayText2();
+        }
+        displayText2();
+
+        // Animasi Teks Webname
+        const textElement = document.getElementById('webname');
+        const text = "LUKY NESIA";
+        const colors = ["white"];
+        let index = 0;
+
+        function displayText() {
+            if (index < text.length) {
+                const currentColor = getRandomColor(colors);
+                const span = document.createElement('span');
+                span.textContent = text[index];
+                span.style.color = currentColor;
+                textElement.appendChild(span);
+                index++;
+                setTimeout(displayText, 210);
+            } else {
+                setTimeout(resetText, 1100);
+            }
+        }
+
+        function resetText() {
+            textElement.textContent = "";
+            index = 0;
+            displayText();
+        }
+        displayText();
+
+        // Sticky Navbar
+        window.onscroll = function () {
+            myFunction()
+        };
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky");
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+
+        // Tab Navigation Logic
+        const buttons = document.querySelectorAll('.navbar-b');
+        const contents = document.querySelectorAll('.konten');
+        const firstButton = buttons[0];
+        const firstIcon = firstButton.querySelector('.icon');
+        firstIcon.classList.toggle('up');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const target = button.getAttribute('data-target');
+                const targetContent = document.querySelector(`.${target}`);
+                const icon = button.querySelector('.icon');
+                contents.forEach(content => {
+                    if (content === targetContent) {
+                        content.classList.add('active');
+                    } else {
+                        content.classList.remove('active');
+                    }
+                });
+                buttons.forEach(btn => {
+                    const btnIcon = btn.querySelector('.icon');
+                    if (btn === button) {
+                        btnIcon.classList.toggle('up', targetContent.classList.contains('active'));
+                    } else {
+                        btnIcon.classList.remove('up');
+                    }
+                });
+            });
+        });
+    </script>
+    
+    <!-- External Scripts -->
+    <script src="https://kit.fontawesome.com/08380760ee.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
